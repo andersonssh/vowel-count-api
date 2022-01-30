@@ -1,5 +1,7 @@
 from flask import request
 from flask_restful import Resource
+from flasgger import swag_from
+
 
 def conta_vogais(str):
     """
@@ -14,6 +16,7 @@ def conta_vogais(str):
 
 
 class VogaisPorPalavra(Resource):
+    @swag_from('docs/contador_vogais.yaml')
     def post(self):
         # declaracão de dicionário que recebe todas as
         # palavras como chave e quantidade de vogais como valor

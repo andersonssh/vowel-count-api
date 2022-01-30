@@ -1,0 +1,35 @@
+tags:
+  - "Conta Vogais"
+summary: "Conta número de vogais em uma lista de palavras"
+description: "Recebe lista de vogais e retorna dicionário com o número de vogais de cada palavra."
+produces:
+- "application/json"
+parameters:
+  - in: "body"
+    name: "body"
+    description: "lista com strings"
+    required: false
+    example: ["jose", "banana", "carro"]
+responses:
+  "200":
+    description: "Sucesso"
+    schema:
+      type: "object"
+      properties:
+        jose:
+          type: "int"
+          example: 2
+        banana:
+          type: "int"
+          example: 3
+        carro:
+          type: "int"
+          example: 2
+  "400":
+    description: "Falha de requisição"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "causa do erro"
