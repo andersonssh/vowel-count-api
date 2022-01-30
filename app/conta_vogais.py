@@ -1,18 +1,19 @@
 from flask import request
 from flask_restful import Resource
 from flasgger import swag_from
+import unidecode
 
 
-def conta_vogais(str):
+def conta_vogais(string:str) -> int:
     """
-    Retorna a quantidade de vogais presentes em uma string
-    :param str: string para análise
-    :return: inteiro com a quantidade de vogais encontradas
+    Pega a quantidade de vogais presentes em uma string
+    :param string: str: String para análise
+    :return: int: Inteiro com a quantidade de vogais encontradas
     """
     # todas as vogais
     vogais = ['a', 'e', 'i', 'o', 'u']
     # calcula e retorna a quantidade de vogais
-    return len([letra for letra in str.lower() if letra in vogais])
+    return len([letra for letra in unidecode.unidecode(string.lower()) if letra in vogais])
 
 
 class VogaisPorPalavra(Resource):

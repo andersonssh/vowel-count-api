@@ -9,14 +9,14 @@ parameters:
     name: "body"
     description: "lista com strings"
     required: false
-    example: ["jose", "banana", "carro"]
+    example: ["josé", "banana", "carro"]
 responses:
   "200":
     description: "Sucesso"
     schema:
       type: "object"
       properties:
-        jose:
+        josé:
           type: "int"
           example: 2
         banana:

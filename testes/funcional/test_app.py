@@ -18,11 +18,11 @@ def client():
 
 def test_verifica_resposta_da_rota_que_conta_vogais(client):
     # enviando requisicao
-    resposta_requisicao = client.post('/vowel_count', json=['jose', 'meio'])
+    resposta_requisicao = client.post('/vowel_count', json=['josé', 'meio', 'sofá'])
 
     # convertendo resposta da requisicao para json
     resposta = resposta_requisicao.data.decode('utf8').replace('\n', '')
     json_resposta = json.loads(resposta)
 
     # verificando se a resposta da requisicao esta correta
-    assert json_resposta == {'jose': 2, 'meio': 3}
+    assert json_resposta == {'josé': 2, 'meio': 3, 'sofá': 2}

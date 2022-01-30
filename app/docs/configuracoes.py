@@ -17,7 +17,7 @@ swagger_template = {
         "info": {
             "title": "Contador de Vogais",
             "description": "API contadora de vogais",
-            "version": "2.0",
+            "version": "1.1.0",
             "basePath": "localhost:5000/api/",
         }
     }
